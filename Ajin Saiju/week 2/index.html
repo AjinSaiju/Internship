@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMC Forwarding</title>
+  <link rel="stylesheet" href="asset/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">TMC FORWARDING</div>
+
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#tracking">Tracking</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="menu-btn">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <h1>Reliable Global Logistics Solutions</h1>
+      <p>
+        Air Freight, Ocean Freight, Customs Clearance and Complete
+        Supply Chain Services.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#services" class="btn primary-btn">Explore Services</a>
+        <a href="#contact" class="btn secondary-btn">Get Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Professional freight forwarding and logistics solutions.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="icon">✈</div>
+        <h3>Air Freight</h3>
+        <p>
+          Fast and secure international air cargo transportation.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🚢</div>
+        <h3>Ocean Freight</h3>
+        <p>
+          Efficient worldwide sea freight and container services.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">📦</div>
+        <h3>Warehousing</h3>
+        <p>
+          Safe storage and inventory management solutions.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🛃</div>
+        <h3>Customs Clearance</h3>
+        <p>
+          Smooth customs handling for hassle‑free shipments.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about-image"></div>
+
+    <div class="about-content">
+      <h2>Trusted Freight Partner</h2>
+      <p>
+        We provide complete logistics solutions for businesses around the
+        globe with a focus on speed, safety and customer satisfaction.
+      </p>
+
+      <ul>
+        <li>✔ Global Shipping Network</li>
+        <li>✔ Professional Logistics Team</li>
+        <li>✔ Real Time Shipment Support</li>
+        <li>✔ Affordable Transportation</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stat-box">
+      <h2>10+</h2>
+      <p>Years Experience</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>500+</h2>
+      <p>Clients</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>1200+</h2>
+      <p>Shipments Delivered</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>24/7</h2>
+      <p>Customer Support</p>
+    </div>
+  </section>
+
+  <!-- Shipment Tracking -->
+  <section class="tracking-section" id="tracking">
+
+    <div class="section-title">
+      <h2>Track Your Shipment</h2>
+      <p>Enter your tracking number to check shipment status.</p>
+    </div>
+
+    <div class="tracking-container">
+      <input type="text" id="trackingInput" placeholder="Enter Tracking Number" />
+
+      <button id="trackBtn">
+        Track Shipment
+      </button>
+    </div>
+
+    <div class="tracking-result">
+
+      <div class="tracking-card hidden">
+
+        <h3>Shipment Status</h3>
+
+        <p>
+          <strong>Tracking ID:</strong>
+          <span id="trackId"></span>
+        </p>
+
+        <p>
+          <strong>Status:</strong>
+          <span id="trackStatus"></span>
+        </p>
+
+        <p>
+          <strong>Current Location:</strong>
+          <span id="trackLocation"></span>
+        </p>
+
+        <p>
+          <strong>Estimated Delivery:</strong>
+          <span id="trackDate"></span>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>Get in touch for logistics and freight solutions.</p>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 TMC Forwarding . All Rights Reserved.</p>
+  </footer>
+
+  <script src="asset/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.app {
+    width: 380px;
+    padding: 20px;
+}
+
+/* Title */
+.title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Search */
+.search-box {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.search-box button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #00c6ff;
+    color: white;
+    cursor: pointer;
+}
+
+/* Cards */
+.card {
+    background: rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #00eaff;
+}
+
+/* Mini blocks */
+.mini {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    padding: 8px;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Hover */
+button:hover {
+    background: #0072ff;
+}

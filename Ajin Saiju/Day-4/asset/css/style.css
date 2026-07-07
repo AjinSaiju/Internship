@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Londrina+Sketch&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: inherit
+}
+
+.top-nav {
+  display: flex;
+  width: 100%;
+  margin-top: 15px;
+  justify-content: center;
+  font-family: "Audiowide";
+}
+
+.autosports {
+  text-align: center;
+}
+
+.nav2,
+.nav1,
+.nav3 {
+  width: 33%;
+  height: 20vh;
+}
+
+a {
+  text-decoration: none;
+  color: #262424;
+}
+
+.nav1 {
+
+  margin-top: 4px;
+}
+
+.nav3 {
+  justify-content: end;
+  display: flex;
+  margin-right: 30px;
+  margin-top: 4px;
+  gap: 20px;
+}
+
+.nav2 {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+}
+
+
+.section1 {
+  width: 100%;
+  height: 100vh;
+  background-image: url(bg.jpg);
+  background-size:cover;
+  display: flex;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position:relative;
+}
+
+.background-section{
+  width:100%;
+  position: absolute;
+  z-index: -7;
+}
+
+.nav1 a {
+  margin-left: 135px;
+}
+
+#bg {
+  align-self: flex-end;
+}
+
+.section2n {
+  height: 100px;
+  display: flex;
+  width: 100%;
+  background-color: #262424;
+}
+
+.section2 {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+
+}
+
+.auto {
+  display: flex;
+  font-size: 80px;
+  align-items: center;
+  font-family: "Audiowide", serif;
+  color: #ffffff;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.bar ul {
+  text-align: right;
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  gap: 50px;
+}
+
+.bar ul li {
+  transition: transform .2s;
+}
+
+.bar {
+  font-family: monospace;
+  margin-top: 30px;
+  font-size: 30px;
+  width: 100%;
+  margin-right: 40px;
+}
+
+.bar ul li:hover {
+  transform: scale(1.2);
+}
+
+.bar ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+font {
+  font-family: "Roboto", serif;
+}
+
+.fc1,
+.fc2 {
+  border-radius: 20px;
+  border: 2px solid black;
+  height: 190px;
+  justify-content: center;
+  display: flex;
+  margin-left: 20px;
+  width: 375px;
+}
+
+.silder-showcase {
+  display: flex;
+}
+
+.autoicon img {
+  width: 100px;
+  margin-top:5px;
+  margin-left: 20px;
+  position: absolute;
+}
+
+.sec3{
+  height: 90vh;
+  width: 100vh;
+}

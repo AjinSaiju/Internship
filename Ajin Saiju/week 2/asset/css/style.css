@@ -1,0 +1,433 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.primary-btn {
+  background: #00bcd4;
+  color: white;
+}
+
+.secondary-btn {
+  border: 2px solid white;
+  color: white;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-3px);
+}
+
+.services,
+.contact {
+  padding: 100px 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+}
+
+.about-image {
+  background: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
+}
+
+.about-content {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f7f7f7;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-content ul {
+  list-style: none;
+}
+
+.about-content li {
+  margin-bottom: 12px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  background: #111;
+  color: white;
+  text-align: center;
+}
+
+.stat-box {
+  padding: 60px 20px;
+}
+
+.stat-box h2 {
+  font-size: 3rem;
+  color: #00bcd4;
+}
+
+.contact-form {
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #00bcd4;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+@media(max-width: 900px) {
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    height: 350px;
+  }
+}
+
+@media(max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: -100%;
+    flex-direction: column;
+    background: #111;
+    width: 250px;
+    padding: 30px;
+    transition: 0.3s;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+}
+/* Tracking Section */
+
+.tracking-section {
+  padding: 100px 8%;
+  background: #f7f9fc;
+}
+
+.tracking-container {
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.tracking-container input {
+  flex: 1;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.tracking-container button {
+  padding: 18px 30px;
+  border: none;
+  border-radius: 14px;
+  background: #00bcd4;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tracking-container button:hover {
+  transform: translateY(-2px);
+}
+
+.tracking-result {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.tracking-card {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+.tracking-card h3 {
+  color: #00bcd4;
+  margin-bottom: 20px;
+}
+
+.tracking-card p {
+  margin-bottom: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@media(max-width: 768px){
+
+  .tracking-container{
+    flex-direction: column;
+  }
+
+}
+/* Delivered Animation */
+
+.delivered-animation{
+
+  display: inline-block;
+  color: #00b894;
+  font-weight: 700;
+  animation: deliveredPulse 1s infinite;
+
+}
+
+@keyframes deliveredPulse{
+
+  0%{
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50%{
+    transform: scale(1.08);
+    opacity: 0.8;
+  }
+
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+
+}
+
+
+/* Confetti */
+
+.confetti{
+
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #00bcd4;
+  top: -10px;
+  animation: confettiFall linear forwards;
+  z-index: 9999;
+
+}
+
+@keyframes confettiFall{
+
+  to{
+
+    transform: translateY(100vh) rotate(720deg);
+
+  }
+
+}

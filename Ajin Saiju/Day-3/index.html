@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Pro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="asset/css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+    <h1 class="title">WeatherPro</h1>
+
+    <div class="search-box">
+        <input type="text" id="city" placeholder="Enter city (e.g. Kochi)">
+        <button onclick="getWeather()">Search</button>
+    </div>
+
+    <div class="card">
+        <h2>Current Weather</h2>
+        <p id="temp"></p>
+        <p id="feels"></p>
+        <p id="humidity"></p>
+        <p id="wind"></p>
+    </div>
+
+    <div class="card">
+        <h2>Next Hours</h2>
+        <div id="hourly"></div>
+    </div>
+
+    <div class="card">
+        <h2>7 Day Forecast</h2>
+        <div id="daily"></div>
+    </div>
+</div>
+
+<script>
+async function getWeather() {
+    const city = document.getElementById("city").value;
+
+    if (!city) {
+        alert("Enter a city name");
+        return;
+    }
+
+    try {
+        // STEP 1: Get coordinates from city
+        const geoRes = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}`);
+        const geoData = await geoRes.json();
+
+        if (!geoData.results) {
+            alert("City not found!");
+            return;
+        }
+
+        const lat = geoData.results[0].latitude;
+        const lon = geoData.results[0].longitude;
+
+        // STEP 2: Get weather using lat/lon
+        const weatherRes = await fetch(
+            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,apparent_temperature,relativehumidity_2m,windspeed_10m&daily=temperature_2m_max,temperature_2m_min&forecast_days=7`
+        );
+
+        const data = await weatherRes.json();
+
+        // Current
+        document.getElementById("temp").innerText =
+            `🌡 Temp: ${data.hourly.temperature_2m[0]}°C`;
+
+        document.getElementById("feels").innerText =
+            `🤒 Feels like: ${data.hourly.apparent_temperature[0]}°C`;
+
+        document.getElementById("humidity").innerText =
+            `💧 Humidity: ${data.hourly.relativehumidity_2m[0]}%`;
+
+        document.getElementById("wind").innerText =
+            `🌬 Wind: ${data.hourly.windspeed_10m[0]} km/h`;
+
+        // Hourly
+        let hourlyHTML = "";
+        for (let i = 0; i < 6; i++) {
+            hourlyHTML += `
+                <div class="mini">
+                    <p>${data.hourly.time[i].slice(11,16)}</p>
+                    <p>${data.hourly.temperature_2m[i]}°C</p>
+                </div>
+            `;
+        }
+        document.getElementById("hourly").innerHTML = hourlyHTML;
+
+        // Daily
+        let dailyHTML = "";
+        for (let i = 0; i < 7; i++) {
+            dailyHTML += `
+                <div class="mini">
+                    <p>Day ${i+1}</p>
+                    <p>${data.daily.temperature_2m_max[i]}° / ${data.daily.temperature_2m_min[i]}°</p>
+                </div>
+            `;
+        }
+        document.getElementById("daily").innerHTML = dailyHTML;
+
+    } catch (error) {
+        alert("Error fetching weather");
+    }
+}
+</script>
+
+</body>
+</html>

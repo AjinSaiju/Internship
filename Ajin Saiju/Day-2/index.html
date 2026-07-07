@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+</head>
+
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+
+            <button onclick="append('1')" class="num">1</button>
+            <button onclick="append('2')" class="num">2</button>
+            <button onclick="append('3')" class="num">3</button>
+            <button onclick="append('+')" class="per">+</button>
+
+            <button onclick="append('4')" class="num">4</button>
+            <button onclick="append('5')" class="num">5</button>
+            <button onclick="append('6')" class="num">6</button>
+            <button onclick="append('-')" class="per">−</button>
+
+            <button onclick="append('7')" class="num">7</button>
+            <button onclick="append('8')" class="num">8</button>
+            <button onclick="append('9')" class="num">9</button>
+            <button onclick="append('*')" class="per">×</button>
+
+            <button onclick="clearDisplay()"class="fns">Clear</button>
+            <button onclick="append('0')" class="num">0</button>
+            <button onclick="deleteLast()"class="fns">BKSPACE</button>
+            <button onclick="append('/')" class="per">÷</button>
+            
+            <button class="equal" onclick="calculate()">=</button>
+
+
+        </div>
+
+    </div>
+
+    <script>
+        let display = document.getElementById("display");
+
+        function append(value) {
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            display.value = "";
+        }
+
+        function deleteLast() {
+            display.value = display.value.slice(0, -1);
+        }
+
+        function calculate() {
+            try {
+                display.value = eval(display.value);
+            } catch {
+                alert("Invalid Expression");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

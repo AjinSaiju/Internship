@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link href="asset/css/style1.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="sec1">
+        <section class="left">
+            <h1>Add Into List</h1>
+
+            <input type="text" id="taskInput" class="content" placeholder="Enter task">
+
+            <div>
+                <button onclick="addTask()">Add</button>
+                <button onclick="removeTask()">Remove</button>
+            </div>
+        </section>
+        <section class="right">
+            <h1>Item List</h1>
+            <ul id="taskList"></ul>
+        </section>
+
+    </section>
+
+    <script>
+        let selectedTask = null;
+
+        function addTask() {
+            let input = document.getElementById("taskInput");
+            let text = input.value.trim();
+
+            if (text === "") {
+                alert("Enter a task!");
+                return;
+            }
+
+            let li = document.createElement("li");
+            li.textContent = text;
+
+            li.onclick = function () {
+                let items = document.querySelectorAll("li");
+                items.forEach(item => item.classList.remove("selected"));
+
+                li.classList.add("selected");
+                selectedTask = li;
+            };
+
+            document.getElementById("taskList").appendChild(li);
+            input.value = "";
+        }
+
+        function removeTask() {
+            if (selectedTask) {
+                selectedTask.remove();
+                selectedTask = null;
+            } else {
+                alert("Select a task first!");
+            }
+        }
+    </script>
+
+</body>
+</html>
